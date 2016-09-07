@@ -56,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         flex-basis: 33%;
         max-width: 33%;
       }
-      
+
       .grid a {
         display:block;
         text-decoration: none;
@@ -103,14 +103,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <span>[[_getPluralizedQuantity(category.items.length)]]</span>
     </header>
 
+    <firebase-query
+        id="query"
+        app-name="dawg"
+        path="/people/white/[[uid]]"
+        data="{{data}}">
+    </firebase-query>
+
+
+
     <ul class="grid" hidden$="[[failure]]">
-      <template is="dom-repeat" items="[[_getListItems(category.items)]]" initial-count="4">
+      <template is="dom-repeat" items="{{data}}" initial-count="4">
         <li>
-          <a href$="[[_getItemHref(item)]]"><shop-list-item item="[[item]]"></shop-list-item></a>
+{{item.name}}
         </li>
       </template>
     </ul>
-    
+
     <!--
       shop-network-warning shows a warning message when the items can't be rendered due
       to network conditions.
