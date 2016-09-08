@@ -15,6 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-common-styles.html">
 <link rel="import" href="shop-image.html">
 <link rel="import" href="shop-list-item.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
 
 <dom-module id="shop-list">
 
@@ -105,14 +106,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <firebase-query
         id="query"
-        app-name="dawg"
-        path="/people/white/[[uid]]"
+        path="/people/white"
         data="{{data}}">
     </firebase-query>
 
 
 
-    <ul class="grid" hidden$="[[failure]]">
+    <ul class="grid" >
       <template is="dom-repeat" items="{{data}}" initial-count="4">
         <li>
 {{item.name}}
