@@ -1,4 +1,6 @@
-# SHOP
+# DAWG app
+
+_[Prototype Site](https://dawg.firebaseapp.com/)_
 
 ### Setup
 
@@ -11,14 +13,9 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
 
 ##### Setup
-    # Using CLI
-    mkdir shop
-    cd shop
-    polymer init shop
-    
-    # Or cloning direct from GitHub
-    git clone https://github.com/Polymer/shop.git
-    cd shop
+
+    git clone https://github.com/alibama/DAWG.git
+    cd DAWG
     bower install
 
 ### Start the development server
@@ -38,7 +35,11 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 This command serves the minified version of the app in an unbundled state, as it would be served by a push-compatible server:
 
     polymer serve build/unbundled
-    
+
 This command serves the minified version of the app generated using fragment bundling:
 
     polymer serve build/bundled
+
+### Deploy to Firebase
+
+    firebase deploy
